@@ -39,15 +39,18 @@ void push(liststackPtr *ptr,const char data)
 char pop(liststackPtr *fptr )
 {
 	assert(fptr != 0 && (*fptr) != 0 && (*fptr)->size != 0);
-	char *nptr;
-	nptr = (char*)malloc((*fptr)->capacity);
-	memcpy(nptr, (*fptr)->data, (*fptr)->size - 1);
-	char ret = (*fptr)->data[(*fptr)->size - 1];
+	//char *nptr;
+	//nptr = (char*)malloc((*fptr)->capacity);
+	//memcpy(nptr, (*fptr)->data, (*fptr)->size - 1);
+	//char ret = (*fptr)->data[(*fptr)->size - 1];
+	//(*fptr)->data[(*fptr)->size - 1] = '\0';
 	//memove((*fptr)->data, (*fptr)->data + 1, (*fptr)->size - 1);
-	free((*fptr)->data);
-	(*fptr)->data = nptr;
+	//free(&(*fptr)->data);
+	//(*fptr)->data = nptr;
+	//printf("The popped value is %c.\n",
+	printf("The popped value is%c\n", (*fptr)->data[(*fptr)->size - 1]);
 	(*fptr)->size -= 1;
-	return ret;
+	//return ret;
 }
 bool isEmpty(liststackPtr topPtr)
 {
@@ -58,7 +61,7 @@ void printStack(liststackPtr currentPtr, LITE_FUNC func)
 {
 	
 	assert(currentPtr);
-	for (int i = 0; i <= currentPtr->size; i++)
+	for (int i = 0; i < currentPtr->size; i++)
 	{
 		func(currentPtr->data[i]);
 	}
