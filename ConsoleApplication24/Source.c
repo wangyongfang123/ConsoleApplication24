@@ -42,15 +42,15 @@ char pop(liststackPtr *fptr )
 	//char *nptr;
 	//nptr = (char*)malloc((*fptr)->capacity);
 	//memcpy(nptr, (*fptr)->data, (*fptr)->size - 1);
-	//char ret = (*fptr)->data[(*fptr)->size - 1];
-	//(*fptr)->data[(*fptr)->size - 1] = '\0';
+	char ret = (*fptr)->data[(*fptr)->size - 1];
+	(*fptr)->data[(*fptr)->size - 1] = '\0';
 	//memove((*fptr)->data, (*fptr)->data + 1, (*fptr)->size - 1);
 	//free(&(*fptr)->data);
 	//(*fptr)->data = nptr;
 	//printf("The popped value is %c.\n",
-	printf("The popped value is%c\n", (*fptr)->data[(*fptr)->size - 1]);
+	//printf("The popped value is%c\n", (*fptr)->data[(*fptr)->size - 1]);
 	(*fptr)->size -= 1;
-	//return ret;
+	return ret;
 }
 bool isEmpty(liststackPtr topPtr)
 {

@@ -29,8 +29,8 @@ int main()
 			break;
 		case 2:      /* pop value off stack */
 			if (!isEmpty(stackPtr))
-				//printf("The popped value is %c.\n",
-					pop(&stackPtr);
+				printf("The popped value  is %c.\n",
+					pop(&stackPtr));
 
 			//printStack(stackPtr, printfElement);
 			break;
